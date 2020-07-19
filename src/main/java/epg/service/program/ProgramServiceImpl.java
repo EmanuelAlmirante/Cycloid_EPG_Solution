@@ -46,10 +46,8 @@ public class ProgramServiceImpl implements ProgramService {
     }
 
     @Override
-    public boolean deleteProgramById(String id) {
+    public void deleteProgramById(String id) {
         programRepository.deleteById(id);
-
-        return true;
     }
 
     @Override

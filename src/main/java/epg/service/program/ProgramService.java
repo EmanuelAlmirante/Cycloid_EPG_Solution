@@ -14,7 +14,7 @@ public interface ProgramService {
 
     Program getProgramById(String id);
 
-    boolean deleteProgramById(String id);
+    void deleteProgramById(String id);
 
     Program updateProgramById(String id, Program program);
 }

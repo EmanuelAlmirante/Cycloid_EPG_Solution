@@ -39,14 +39,8 @@ public class ProgramController extends AbstractController {
 
     @DeleteMapping("/programId/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<Void> deleteProgramById(@PathVariable(name = "id") String id) {
-        boolean wasDeleted = programService.deleteProgramById(id);
-
-        if(wasDeleted) {
-            return ResponseEntity.noContent().build();
-        }
-
-        return ResponseEntity.notFound().build();
+    public void deleteProgramById(@PathVariable(name = "id") String id) {
+        programService.deleteProgramById(id);
     }
 
     @PutMapping("/programId/{id}")
