@@ -18,6 +18,15 @@ To manually test the API please import the file in the _postman_collections_ to 
   - _mvn -Dtest=TestClass1,TestClass2 test_ -> run multiple test classes
 - Package the application with _mvn package_
 
+### To Use With Docker:
+  - Install Docker on your machine
+  - Launch Docker
+  - Run the command _sudo systemctl status docker_ to confirm Docker is running
+  - Open terminal in the project folder
+  - Run the command _sudo docker build -t [NAME_OF_IMAGE] ._ to create the Docker image. Replace _NAME_OF_IMAGE_ with a name for that image like, for example, _cycloid-epg-solution_
+  - Run the command _sudo docker run -p 8080:8080 [NAME_OF_IMAGE]_ to launch the application
+  - Test using Postman
+    
 ## Endpoints:
 
 Below are documented the endpoints of the API of this project. There are also some examples of possible outcomes that might happen when using the API.
