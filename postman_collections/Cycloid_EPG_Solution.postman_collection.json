@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "7de1c6a5-70cf-4001-8114-45502ecbcdce",
+		"name": "Cycloid_EPG_Solution",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/epg/api/channels/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Channel 1\",\n    \"position\": 1,\n    \"category\": \"Sports\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/epg/api/channels/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"epg",
+						"api",
+						"channels",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/epg/api/channels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/epg/api/channels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"epg",
+						"api",
+						"channels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/epg/api/programs/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"channelId\": \"06d6232c-dca4-493d-86fb-f82f057dc5d5\",\n    \"imageUrl\": \"http://cycloid.com/channel1-image/\",\n    \"title\": \"Best EPL Goals\",\n    \"description\": \"Review the amazing goals scored in the last English Premier League season!\",\n    \"startTime\": \"2020-07-18T11:45:47\",\n    \"endTime\": \"2020-07-18T12:45:47\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/epg/api/programs/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"epg",
+						"api",
+						"programs",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/epg/api/programs/channelId/af0d291f-e882-464b-9d63-32138b5f7964",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/epg/api/programs/channelId/06d6232c-dca4-493d-86fb-f82f057dc5d5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"epg",
+						"api",
+						"programs",
+						"channelId",
+						"06d6232c-dca4-493d-86fb-f82f057dc5d5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/epg/api/programs/programId/cf768534-30f5-476f-aa82-e88b4b9c573c",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/epg/api/programs/programId/0d8d1a97-bec1-4d23-91b6-e164f6c635c6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"epg",
+						"api",
+						"programs",
+						"programId",
+						"0d8d1a97-bec1-4d23-91b6-e164f6c635c6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/epg/api/programs/cf94d063-2dc7-46b0-bdfc-47f8335f8ca8",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"endTime\": \"2020-07-18T12:47:47\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/epg/api/programs/programId/0d8d1a97-bec1-4d23-91b6-e164f6c635c6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"epg",
+						"api",
+						"programs",
+						"programId",
+						"0d8d1a97-bec1-4d23-91b6-e164f6c635c6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/epg/api/programs/2581742e-dec5-4368-917a-876225fea4e4",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/epg/api/programs/programId/0d8d1a97-bec1-4d23-91b6-e164f6c635c6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"epg",
+						"api",
+						"programs",
+						"programId",
+						"0d8d1a97-bec1-4d23-91b6-e164f6c635c6"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
