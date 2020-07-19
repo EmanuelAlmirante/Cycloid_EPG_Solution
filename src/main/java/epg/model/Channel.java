@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "channels")
@@ -15,8 +16,14 @@ public class Channel {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+
+    @NotNull
     private String name;
+
+    @NotNull
     private Integer position;
+
+    @NotNull
     private String category;
 
     public Channel() {
@@ -66,7 +73,6 @@ public class Channel {
         }
 
         public Builder withName(String name) {
-
             this.name = name;
 
             return this;
@@ -77,7 +83,7 @@ public class Channel {
 
             return this;
         }
-        
+
         public Builder withCategory(String category) {
             this.category = category;
 

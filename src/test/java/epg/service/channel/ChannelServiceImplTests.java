@@ -221,16 +221,12 @@ public class ChannelServiceImplTests {
                 Channel.Builder.channelWith().withName(nameChannelOne).withPosition(positionChannelOne)
                                .withCategory(categoryChannelOne).build();
 
-        channelRepository.save(channelOne);
-
         String nameChannelTwo = "Channel 2";
         Integer positionChannelTwo = 2;
         String categoryChannelTwo = "Sports";
 
         Channel channelTwo = Channel.Builder.channelWith().withName(nameChannelTwo).withPosition(positionChannelTwo)
                                             .withCategory(categoryChannelTwo).build();
-
-        channelRepository.save(channelTwo);
 
         List<Channel> allChannelsList = new ArrayList<>(Arrays.asList(channelOne, channelTwo));
 

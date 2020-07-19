@@ -20,10 +20,8 @@ public class ChannelRepositoryTests {
     @Autowired
     private ChannelRepository channelRepository;
 
-
-
     @Test
-    public void canSaveChannelSuccessfully() {
+    public void saveChannelSuccessfully() {
         // Arrange
         String name = "Channel 1";
         Integer position = 1;
@@ -44,7 +42,7 @@ public class ChannelRepositoryTests {
     }
 
     @Test
-    public void canFindAllChannelsReturnsPopulatedList() {
+    public void findAllChannelsReturnsPopulatedList() {
         // Arrange
         String nameChannelOne = "Channel 1";
         Integer positionChannelOne = 1;
@@ -77,7 +75,7 @@ public class ChannelRepositoryTests {
     }
 
     @Test
-    public void canFindAllChannelsReturnsEmptyList() {
+    public void findAllChannelsReturnsEmptyList() {
         // Act
         List<Channel> allChannelsList = channelRepository.findAll();
 
@@ -151,6 +149,40 @@ public class ChannelRepositoryTests {
 
         // Act
         Channel channelRetrieved = channelRepository.getChannelByPosition(position);
+
+        // Assert
+        assertNull(channelRetrieved);
+    }
+
+    @Test
+    public void findByIdSuccessfully() {
+        String name = "Channel 1";
+        Integer position = 1;
+        String category = "Sports";
+
+        Channel channelToBeCreated =
+                Channel.Builder.channelWith().withName(name).withPosition(position).withCategory(category).build();
+
+        Channel channelCreated = channelRepository.save(channelToBeCreated);
+
+        // Act
+        Channel channelRetrieved = channelRepository.findById(channelCreated.getId()).orElse(null);
+
+        // Assert
+        assertNotNull(channelRetrieved);
+        assertFalse(channelRetrieved.getId().isEmpty());
+        assertEquals(name, channelRetrieved.getName());
+        assertEquals(position, channelRetrieved.getPosition());
+        assertEquals(category, channelRetrieved.getCategory());
+    }
+
+    @Test
+    public void findByIdFails() {
+        // Arrange
+        String id = "0d8d1a97-bec1-4d23-91b6-e164f6c635c6";
+
+        // Act
+        Channel channelRetrieved = channelRepository.findById(id).orElse(null);
 
         // Assert
         assertNull(channelRetrieved);

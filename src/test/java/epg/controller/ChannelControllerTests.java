@@ -46,8 +46,7 @@ public class ChannelControllerTests extends AbstractTest {
         String id = JsonPath.parse(jsonResponse).read("$.id");
         String expectedJsonResponse =
                 "{\"id\":" + "\"" + id + "\"" + ",\"name\":" + "\"" + name + "\"" + ",\"position\":" + position +
-                        ",\"category\":" + "\"" + category + "\"" +
-                        "}";
+                        ",\"category\":" + "\"" + category + "\"" + "}";
 
         // Assert
         assertEquals(expectedJsonResponse, jsonResponse);
