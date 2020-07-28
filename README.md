@@ -23,6 +23,7 @@ To manually test the API please import the file in the _postman_collections_ to 
   - Launch Docker
   - Run the command _sudo systemctl status docker_ to confirm Docker is running
   - Open terminal in the project folder
+  - Run the command _mvn clean install_
   - Run the command _sudo docker build -t [NAME_OF_IMAGE] ._ to create the Docker image. Replace _NAME_OF_IMAGE_ with a name for that image like, for example, _cycloid-epg-solution_
   - Run the command _sudo docker run -p 8080:8080 [NAME_OF_IMAGE]_ to launch the application
   - Test using Postman
